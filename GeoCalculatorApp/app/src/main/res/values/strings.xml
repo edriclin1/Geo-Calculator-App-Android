@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GeoCalculatorApp</string>
+    <string-array name="distanceUnitsList">
+        <item>Kilometers</item>
+        <item>Miles</item>
+    </string-array>
+    <string-array name="bearingUnitsList">
+        <item>Degrees</item>
+        <item>Mils</item>
+    </string-array>
+</resources>
