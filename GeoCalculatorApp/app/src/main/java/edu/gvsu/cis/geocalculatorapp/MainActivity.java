@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -24,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
         EditText p1LatField = findViewById(R.id.p1LatField);
         EditText p1LongField = findViewById(R.id.p1LongField);
         EditText p2LatField = findViewById(R.id.p2LatField);
@@ -31,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button calculateButton = findViewById(R.id.calculateButton);
         Button clearButton = findViewById(R.id.clearButton);
-        Button settingsButton = findViewById(R.id.settingsButton);
+//        Button settingsButton = findViewById(R.id.settingsButton);
 
         TextView distanceLabel = findViewById(R.id.distanceLabel);
         TextView bearingLabel = findViewById(R.id.bearingLabel);
@@ -107,10 +114,10 @@ public class MainActivity extends AppCompatActivity {
             p2LongField.setText("");
         });
 
-        settingsButton.setOnClickListener(v -> {
+/*        settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SettingsAcitvity.class);
             startActivityForResult(intent, UNITS_SELECTION);
-        });
+        });*/
     }
 
     @Override
@@ -119,5 +126,19 @@ public class MainActivity extends AppCompatActivity {
             this.distanceUnits = data.getStringExtra("distanceUnits");
             this.bearingUnits = data.getStringExtra("bearingUnits");
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(MainActivity.this, SettingsAcitvity.class);
+        startActivityForResult(intent, UNITS_SELECTION);
+        return super.onOptionsItemSelected(item);
     }
 }
