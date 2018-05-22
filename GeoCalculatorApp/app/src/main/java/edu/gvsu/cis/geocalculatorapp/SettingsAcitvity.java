@@ -1,5 +1,14 @@
 package edu.gvsu.cis.geocalculatorapp;
 
+/**
+ * Settings activity screen for geo calculator app.
+ *
+ * @author Edric Lin
+ * @author Dimitri Haring
+ * @version 5/22/18
+ *
+ */
+
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
