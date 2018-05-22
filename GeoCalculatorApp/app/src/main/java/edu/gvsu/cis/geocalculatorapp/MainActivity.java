@@ -10,11 +10,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
             // check if any fields are empty
             if (p1LatStr.length() == 0 || p1LongStr.length() == 0 ||
                     p2LatStr.length() == 0 || p2LongStr.length() == 0) {
-                // implement snackbar
-                return;
+                Toast.makeText(this, "Oops! You forgot to fill out some fields.", Toast.LENGTH_SHORT).show();
             }
 
             // else proceed with calculations
@@ -92,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // add calculation to distance and bearing labels
-                distanceLabel.setText("Distance: " + String.format("%.2f", distance) +
+                distanceLabel.setText(getString(R.string.emptyDistance) + " " + String.format("%.2f", distance) +
                         " " + this.distanceUnits);
-                bearingLabel.setText("Bearing: " + String.format("%.2f", bearing) +
+                bearingLabel.setText(getString(R.string.emptyBearing) + " " + String.format("%.2f", bearing) +
                         " " + this.bearingUnits);
             }
         });
@@ -112,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
             p1LongField.setText("");
             p2LatField.setText("");
             p2LongField.setText("");
+
+            distanceLabel.setText(getString(R.string.emptyDistance));
+            bearingLabel.setText(getString(R.string.emptyBearing));
         });
 
 /*        settingsButton.setOnClickListener(v -> {
@@ -125,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode == UNITS_SELECTION) {
             this.distanceUnits = data.getStringExtra("distanceUnits");
             this.bearingUnits = data.getStringExtra("bearingUnits");
+
+            Button calculateButton = findViewById(R.id.calculateButton);
+            calculateButton.performClick();
         }
     }
 

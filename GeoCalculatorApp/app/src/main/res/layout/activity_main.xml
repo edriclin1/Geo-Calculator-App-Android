@@ -9,7 +9,8 @@
 
     <include
         android:id="@+id/app_bar"
-        layout="@layout/app_bar"></include>
+        layout="@layout/app_bar">
+    </include>
 
     <Button
         android:id="@+id/clearButton"
@@ -17,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="364dp"
         android:layout_marginEnd="180dp"
-        android:text="Clear"
+        android:text="@string/clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/p2LatField"
@@ -29,7 +30,7 @@
         android:layout_height="51dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Enter longitude for p2"
+        android:hint="@string/p2Long"
         android:inputType="numberSigned|numberDecimal"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/calculateButton"
@@ -41,7 +42,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:hint="Enter latitude for p2"
+        android:hint="@string/p2Lat"
         android:inputType="numberSigned|numberDecimal"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/calculateButton"
@@ -53,7 +54,7 @@
         android:layout_height="51dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Enter longitude for p1"
+        android:hint="@string/p1Long"
         android:inputType="numberSigned|numberDecimal"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/p2LongField"
@@ -66,7 +67,7 @@
         android:layout_marginEnd="22dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:hint="Enter latitude for p1"
+        android:hint="@string/p1Lat"
         android:inputType="numberSigned|numberDecimal"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/p2LatField"
@@ -79,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_marginStart="15dp"
-        android:text="Calculate"
+        android:text="@string/calculate"
         app:layout_constraintBottom_toTopOf="@+id/distanceLabel"
         app:layout_constraintEnd_toStartOf="@+id/clearButton"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
-        android:text="Distance:"
+        android:text="@string/emptyDistance"
         app:layout_constraintBottom_toTopOf="@+id/bearingLabel"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -100,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="300dp"
         android:layout_marginStart="16dp"
-        android:text="Bearing:"
+        android:text="@string/emptyBearing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

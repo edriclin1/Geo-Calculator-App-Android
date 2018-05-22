@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class SettingsAcitvity extends AppCompatActivity {
 
@@ -38,7 +36,7 @@ public class SettingsAcitvity extends AppCompatActivity {
         });
 
         // set up distance units picker
-        Spinner distanceUnitsPicker = (Spinner) findViewById(R.id.distanceUnitsPicker);
+        Spinner distanceUnitsPicker = findViewById(R.id.distanceUnitsPicker);
 
         ArrayAdapter<CharSequence> distanceAdapter = ArrayAdapter.createFromResource(this,
                 R.array.distanceUnitsList, android.R.layout.simple_spinner_item);
@@ -49,7 +47,6 @@ public class SettingsAcitvity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 distanceUnitsSelection = (String) adapterView.getItemAtPosition(i);
-                TextView distanceTitleLabel = findViewById(R.id.distanceTitleLabel);
             }
 
             @Override
@@ -59,7 +56,7 @@ public class SettingsAcitvity extends AppCompatActivity {
         });
 
         // set up bearing units picker
-        Spinner bearingUnitsPicker = (Spinner) findViewById(R.id.bearingUnitsPicker);
+        Spinner bearingUnitsPicker = findViewById(R.id.bearingUnitsPicker);
 
         ArrayAdapter<CharSequence> bearingAdapter = ArrayAdapter.createFromResource(this,
                 R.array.bearingUnitsList, android.R.layout.simple_spinner_item);
